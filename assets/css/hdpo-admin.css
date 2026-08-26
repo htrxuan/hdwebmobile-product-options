@@ -1,0 +1,81 @@
+.hdpo-groups {
+	padding: 0 12px;
+}
+
+.hdpo-group-row {
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 10px 12px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.hdpo-group-row-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+/* WooCommerce's own admin CSS (.woocommerce_options_panel select, label) floats these elements
+   with higher specificity than a plain child selector can override, which breaks the flex
+   layout below. !important is the pragmatic fix -- flex items should ignore float per spec
+   anyway, so this only ever cancels an unwanted inherited style, never something of ours. */
+#hdpo_product_data .hdpo-group-row-header > * {
+	float: none !important;
+}
+
+.hdpo-group-label {
+	flex: 0 1 280px;
+	width: 280px;
+}
+
+/* WordPress/WooCommerce core admin CSS applies a large negative margin-left to bare <label>
+   elements in some contexts (a "label wraps its own checkbox" convention elsewhere in wp-admin)
+   which, here, pulls this label back on top of the previous flex sibling. Cancel it explicitly. */
+.hdpo-required-label {
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	margin-left: 0 !important;
+}
+
+.hdpo-remove-group,
+.hdpo-remove-choice {
+	float: none;
+	color: #b32d2e;
+	font-size: 18px;
+	line-height: 1;
+	text-decoration: none;
+	padding: 0 4px;
+}
+
+.hdpo-price-field {
+	margin-top: 8px;
+}
+
+.hdpo-price-input {
+	width: 100px;
+}
+
+.hdpo-choices-field {
+	margin-top: 8px;
+	padding-left: 12px;
+	border-left: 3px solid #f0f0f1;
+}
+
+.hdpo-choice-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+#hdpo_product_data .hdpo-choice-row > * {
+	float: none !important;
+}
+
+template {
+	display: none;
+}
