@@ -67,7 +67,7 @@ final class HDPO_Core
         ?>
         <div class="notice notice-error is-dismissible">
             <p>
-                <?php esc_html_e('HDWebmobile Product Options & Add-ons requires WooCommerce to be installed and active. The plugin has been deactivated.', 'hdwebmobile-product-options'); ?>
+                <?php esc_html_e('HDWebmobile Product Options & Add-ons requires WooCommerce to be installed and active. The plugin has been deactivated.', 'hdwebmobile-product-options-add-ons'); ?>
             </p>
         </div>
         <?php
