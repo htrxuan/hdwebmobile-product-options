@@ -57,7 +57,7 @@ class HDPO_Cart
                 wc_add_notice(
                     sprintf(
                         /* translators: %s: option label */
-                        __('"%s" is required.', 'hdwebmobile-product-options-add-ons'),
+                        __('"%s" is required.', 'hdwebmobile-product-options'),
                         $group['label']
                     ),
                     'error'
@@ -198,7 +198,7 @@ class HDPO_Cart
             }
             return array(
                 'label'       => $group['label'],
-                'value_label' => __('Yes', 'hdwebmobile-product-options-add-ons'),
+                'value_label' => __('Yes', 'hdwebmobile-product-options'),
                 'price'       => '' !== $group['price'] ? (float) $group['price'] : 0.0,
             );
         }

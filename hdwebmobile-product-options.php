@@ -9,7 +9,7 @@
  * Author URI: https://hdwebmobile.com/
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: hdwebmobile-product-options-add-ons
+ * Text Domain: hdwebmobile-product-options
  * Domain Path: /languages
  * Requires Plugins: woocommerce
  * Requires PHP: 7.4
@@ -43,7 +43,7 @@ add_action('plugins_loaded', function () {
 });
 
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), function ($links) {
-    $donate_link = '<a href="https://paypal.me/htrxuan/20" target="_blank" rel="noopener noreferrer">' . esc_html__('Donate', 'hdwebmobile-product-options-add-ons') . '</a>';
+    $donate_link = '<a href="https://paypal.me/htrxuan/20" target="_blank" rel="noopener noreferrer">' . esc_html__('Donate', 'hdwebmobile-product-options') . '</a>';
     array_unshift($links, $donate_link);
     return $links;
 });

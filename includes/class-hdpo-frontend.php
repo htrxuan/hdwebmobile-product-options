@@ -93,7 +93,7 @@ class HDPO_Frontend
                     name="<?php echo esc_attr($name); ?>"
                     <?php echo $required ? 'required' : ''; ?>
                 >
-                    <option value=""><?php esc_html_e('Choose an option&hellip;', 'hdwebmobile-product-options-add-ons'); ?></option>
+                    <option value=""><?php esc_html_e('Choose an option&hellip;', 'hdwebmobile-product-options'); ?></option>
                     <?php foreach ($group['choices'] as $choice_index => $choice) : ?>
                         <option value="<?php echo esc_attr($choice_index); ?>" data-hdpo-price="<?php echo esc_attr($choice['price']); ?>">
                             <?php
@@ -132,7 +132,7 @@ class HDPO_Frontend
             'decimalSep'    => wc_get_price_decimal_separator(),
             'thousandSep'   => wc_get_price_thousand_separator(),
             'priceFormat'   => get_woocommerce_price_format(),
-            'previewLabel'  => __('Total with options:', 'hdwebmobile-product-options-add-ons'),
+            'previewLabel'  => __('Total with options:', 'hdwebmobile-product-options'),
         ));
     }
 

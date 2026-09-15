@@ -39,7 +39,7 @@ class HDPO_Admin
     public function add_product_data_tab($tabs)
     {
         $tabs['hdpo'] = array(
-            'label'    => __('Options & Add-ons', 'hdwebmobile-product-options-add-ons'),
+            'label'    => __('Options & Add-ons', 'hdwebmobile-product-options'),
             'target'   => 'hdpo_product_data',
             'class'    => array('show_if_simple'),
             'priority' => 22,
@@ -85,7 +85,7 @@ class HDPO_Admin
         <div id="hdpo_product_data" class="panel woocommerce_options_panel hidden">
             <div class="options_group">
                 <p style="padding: 0 12px;">
-                    <?php esc_html_e('Add paid options customers choose before adding this product to their cart (e.g. engraving text, a size upgrade, gift wrap). Prices are flat amounts only -- no formulas.', 'hdwebmobile-product-options-add-ons'); ?>
+                    <?php esc_html_e('Add paid options customers choose before adding this product to their cart (e.g. engraving text, a size upgrade, gift wrap). Prices are flat amounts only -- no formulas.', 'hdwebmobile-product-options'); ?>
                 </p>
 
                 <div id="hdpo-groups" class="hdpo-groups">
@@ -95,7 +95,7 @@ class HDPO_Admin
                 </div>
 
                 <p style="padding: 0 12px;">
-                    <button type="button" class="button" id="hdpo-add-group"><?php esc_html_e('+ Add Option', 'hdwebmobile-product-options-add-ons'); ?></button>
+                    <button type="button" class="button" id="hdpo-add-group"><?php esc_html_e('+ Add Option', 'hdwebmobile-product-options'); ?></button>
                 </p>
             </div>
         </div>
@@ -133,25 +133,25 @@ class HDPO_Admin
                 <input
                     type="text"
                     class="hdpo-group-label"
-                    placeholder="<?php esc_attr_e('Option label (e.g. Engraving Text)', 'hdwebmobile-product-options-add-ons'); ?>"
+                    placeholder="<?php esc_attr_e('Option label (e.g. Engraving Text)', 'hdwebmobile-product-options'); ?>"
                     name="hdpo_options[<?php echo esc_attr($index); ?>][label]"
                     value="<?php echo esc_attr($label); ?>"
                 />
                 <select class="hdpo-type-select" name="hdpo_options[<?php echo esc_attr($index); ?>][type]">
-                    <option value="text" <?php selected($type, 'text'); ?>><?php esc_html_e('Text field', 'hdwebmobile-product-options-add-ons'); ?></option>
-                    <option value="select" <?php selected($type, 'select'); ?>><?php esc_html_e('Dropdown', 'hdwebmobile-product-options-add-ons'); ?></option>
-                    <option value="checkbox" <?php selected($type, 'checkbox'); ?>><?php esc_html_e('Checkbox', 'hdwebmobile-product-options-add-ons'); ?></option>
+                    <option value="text" <?php selected($type, 'text'); ?>><?php esc_html_e('Text field', 'hdwebmobile-product-options'); ?></option>
+                    <option value="select" <?php selected($type, 'select'); ?>><?php esc_html_e('Dropdown', 'hdwebmobile-product-options'); ?></option>
+                    <option value="checkbox" <?php selected($type, 'checkbox'); ?>><?php esc_html_e('Checkbox', 'hdwebmobile-product-options'); ?></option>
                 </select>
                 <label class="hdpo-required-label">
                     <input type="checkbox" name="hdpo_options[<?php echo esc_attr($index); ?>][required]" value="1" <?php checked($required); ?> />
-                    <?php esc_html_e('Required', 'hdwebmobile-product-options-add-ons'); ?>
+                    <?php esc_html_e('Required', 'hdwebmobile-product-options'); ?>
                 </label>
-                <button type="button" class="button-link hdpo-remove-group" aria-label="<?php esc_attr_e('Remove option', 'hdwebmobile-product-options-add-ons'); ?>">&times;</button>
+                <button type="button" class="button-link hdpo-remove-group" aria-label="<?php esc_attr_e('Remove option', 'hdwebmobile-product-options'); ?>">&times;</button>
             </div>
 
             <div class="hdpo-price-field" <?php echo $is_select ? 'hidden' : ''; ?>>
                 <label>
-                    <?php esc_html_e('Price adjustment:', 'hdwebmobile-product-options-add-ons'); ?>
+                    <?php esc_html_e('Price adjustment:', 'hdwebmobile-product-options'); ?>
                     <input type="number" step="0.01" min="0" class="hdpo-price-input" name="hdpo_options[<?php echo esc_attr($index); ?>][price]" value="<?php echo esc_attr($price); ?>" />
                 </label>
             </div>
@@ -162,7 +162,7 @@ class HDPO_Admin
                         <?php echo self::render_choice_row($index, $cindex, $choice); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- render_choice_row() escapes all interpolated values internally. ?>
                     <?php endforeach; ?>
                 </div>
-                <button type="button" class="button button-small hdpo-add-choice"><?php esc_html_e('+ Add Choice', 'hdwebmobile-product-options-add-ons'); ?></button>
+                <button type="button" class="button button-small hdpo-add-choice"><?php esc_html_e('+ Add Choice', 'hdwebmobile-product-options'); ?></button>
             </div>
         </div>
         <?php
@@ -179,7 +179,7 @@ class HDPO_Admin
         <div class="hdpo-choice-row">
             <input
                 type="text"
-                placeholder="<?php esc_attr_e('Choice label (e.g. Large)', 'hdwebmobile-product-options-add-ons'); ?>"
+                placeholder="<?php esc_attr_e('Choice label (e.g. Large)', 'hdwebmobile-product-options'); ?>"
                 name="hdpo_options[<?php echo esc_attr($group_index); ?>][choices][<?php echo esc_attr($choice_index); ?>][label]"
                 value="<?php echo esc_attr($label); ?>"
             />
@@ -188,11 +188,11 @@ class HDPO_Admin
                 step="0.01"
                 min="0"
                 class="hdpo-price-input"
-                placeholder="<?php esc_attr_e('Price', 'hdwebmobile-product-options-add-ons'); ?>"
+                placeholder="<?php esc_attr_e('Price', 'hdwebmobile-product-options'); ?>"
                 name="hdpo_options[<?php echo esc_attr($group_index); ?>][choices][<?php echo esc_attr($choice_index); ?>][price]"
                 value="<?php echo esc_attr($price); ?>"
             />
-            <button type="button" class="button-link hdpo-remove-choice" aria-label="<?php esc_attr_e('Remove choice', 'hdwebmobile-product-options-add-ons'); ?>">&times;</button>
+            <button type="button" class="button-link hdpo-remove-choice" aria-label="<?php esc_attr_e('Remove choice', 'hdwebmobile-product-options'); ?>">&times;</button>
         </div>
         <?php
         return ob_get_clean();
@@ -226,7 +226,7 @@ class HDPO_Admin
     public function register_hub_tabs($tabs)
     {
         $tabs['product-options'] = array(
-            'label'  => __('Product Options & Add-ons', 'hdwebmobile-product-options-add-ons'),
+            'label'  => __('Product Options & Add-ons', 'hdwebmobile-product-options'),
             'order'  => 100,
             'render' => array($this, 'render_plugins_page'),
         );
@@ -236,7 +236,7 @@ class HDPO_Admin
     public function render_plugins_page()
     {
         ?>
-        <p><?php esc_html_e('Add paid text, dropdown, and checkbox options to products (engraving, gift wrap, size upgrades) -- flat pricing only, no formula evaluation. There\'s nothing to configure here -- go to any product\'s own "Options & Add-ons" tab under Product Data to add its options.', 'hdwebmobile-product-options-add-ons'); ?></p>
+        <p><?php esc_html_e('Add paid text, dropdown, and checkbox options to products (engraving, gift wrap, size upgrades) -- flat pricing only, no formula evaluation. There\'s nothing to configure here -- go to any product\'s own "Options & Add-ons" tab under Product Data to add its options.', 'hdwebmobile-product-options'); ?></p>
         <?php
     }
 }
